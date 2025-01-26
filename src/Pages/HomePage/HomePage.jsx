@@ -104,6 +104,8 @@ const HomePage = () => {
     rows: 2,
     slidesToShow: 5,
     slidesToScroll: 2,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
   };
 
   let bannerSetting = {
@@ -153,10 +155,10 @@ const HomePage = () => {
 
           <div className='w-[20%]'>
             <div className='flex flex-col gap-y-2 justify-center items-end'>
-              <p className='cursor-pointer'>Men's cloths</p>
-              <p className='cursor-pointer'>Women's cloths</p>
-              <p className='cursor-pointer'>electronics</p>
-              <p className='cursor-pointer'>jewelry</p>
+              <p className='cursor-pointer hover:tracking-wider hover:text-red-600 duration-[0.2s]'>Men's cloths</p>
+              <p className='cursor-pointer hover:tracking-wider hover:text-red-600 duration-[0.2s]'>Women's cloths</p>
+              <p className='cursor-pointer hover:tracking-wider hover:text-red-600 duration-[0.2s]'>electronics</p>
+              <p className='cursor-pointer hover:tracking-wider hover:text-red-600 duration-[0.2s]'>jewelry</p>
             </div>
           </div>
 
