@@ -4,30 +4,30 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { SlBasket } from "react-icons/sl";
 import { IoSearchOutline } from "react-icons/io5";
 
-
 const Header = () => {
+    const whishlistProducts = JSON.parse(localStorage.getItem("whishlistProducts"))
     return (
         <div className='w-full flex items-center justify-between pt-[40px] pb-[16px] px-[135px] border-b border-slate-200'>
             <h1 className='text-[24px] font-semibold cursor-pointer'>eMarket</h1>
 
             <div className='flex gap-x-[48px] items-center'>
-                <div id='navbarContent'> 
-                    <Link  to="/">Home</Link>
+                <div id='navbarContent'>
+                    <Link to="/">Home</Link>
                     <div id='border'></div>
                 </div>
 
                 <div id='navbarContent'>
-                    <Link  to="/">Contanct</Link>
+                    <Link to="/">Contanct</Link>
                     <div id='border'></div>
                 </div>
 
                 <div id='navbarContent'>
-                    <Link  to="/">About</Link>
+                    <Link to="/">About</Link>
                     <div id='border'></div>
                 </div>
 
                 <div id='navbarContent'>
-                    <Link  to="/">Sign Up</Link>
+                    <Link to="/">Sign Up</Link>
                     <div id='border'></div>
                 </div>
 
@@ -39,7 +39,12 @@ const Header = () => {
                     <IoSearchOutline className='cursor-pointer' />
                 </div>
 
-                <IoIosHeartEmpty className='text-[25px] cursor-pointer hover:text-red-600 duration-[0.2s]' />
+                <div className='relative'>
+                    <IoIosHeartEmpty className='text-[25px] cursor-pointer' />
+                    <div className='absolute top-0 right-0 rounded-full bg-red-600 text-white w-[25px] h-[25px] '>
+                        {whishlistProducts.length}
+                    </div>
+                </div>
                 <SlBasket className='text-[25px] cursor-pointer hover:text-cyan-600 duration-[0.2s]' />
             </div>
 

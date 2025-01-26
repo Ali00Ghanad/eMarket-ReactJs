@@ -17,9 +17,7 @@ import speaker from './assets/Frame 600.png'
 
 const HomePage = () => {
   // ---- States ---- 
-  const [allProducts, setAllProducts] = useState([])
-  const [bannerPics, setBannerPics] = useState([])
-
+  const [allProducts, setAllProducts] = useState([]);
 
   const fetchApi = async () => {
     try {
@@ -60,26 +58,7 @@ const HomePage = () => {
     );
   }
 
-  const headerBannerApi = async () => {
-    try {
-      const response = await axios.get(`https://fakestoreapi.com/products/category/electronics?limit=4`)
-
-      if (response.status === 200) {
-        setBannerPics(response.data)
-        console.log('specific items ', response.data);
-      }
-      else if (response.status === 404) {
-
-      }
-
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-
   useEffect(() => {
-    headerBannerApi()
     fetchApi()
   }, [])
 
@@ -256,19 +235,19 @@ const HomePage = () => {
             <h2 className='text-white text-[40px]'>Enhance Your <br /> Music Experience</h2>
 
             <div className='flex items-center justify-evenly flex-wrap gap-x-5 '>
-              <div className='bg-white w-[60px] h-[60px] flex items-center justify-center rounded-full'>
+              <div className='bg-white w-[60px] h-[60px] flex items-center justify-center rounded-full leading-3'>
                 <p className='font-bold text-[14px] flex flex-col items-center'>23 <span className='font-thin'>Hours</span></p>
               </div>
 
-              <div className='bg-white w-[60px] h-[60px] flex items-center justify-center rounded-full'>
+              <div className='bg-white w-[60px] h-[60px] flex items-center justify-center rounded-full leading-3'>
                 <p className='font-bold text-[14px] flex flex-col items-center'>05 <span className='font-thin'>Days</span></p>
               </div>
 
-              <div className='bg-white w-[60px] h-[60px] flex items-center justify-center rounded-full'>
+              <div className='bg-white w-[60px] h-[60px] flex items-center justify-center rounded-full leading-3'>
                 <p className='font-bold text-[14px] flex flex-col items-center'>59 <span className='font-thin'>Minutes</span></p>
               </div>
 
-              <div className='bg-white w-[60px] h-[60px] flex items-center justify-center rounded-full'>
+              <div className='bg-white w-[60px] h-[60px] flex items-center justify-center rounded-full leading-3'>
                 <p className='font-bold text-[14px] flex flex-col items-center'>35 <span className='font-thin'>Seconds</span></p>
               </div>
             </div>
@@ -276,7 +255,7 @@ const HomePage = () => {
             <button className='bg-green-600 text-white text-[20px] px-10 py-4 rounded-lg w-fit'>Buy Now</button>
           </div>
 
-          <div style={{ backgroundImage: "radial-gradient(closest-side at 50% 55%, red, green, black)" }}>
+          <div style={{ backgroundImage: "radial-gradient(closest-side at 50% 55%, red, darkgreen, black)" }}>
             <img src={speaker} />
           </div>
         </div>
