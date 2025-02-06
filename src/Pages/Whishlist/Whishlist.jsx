@@ -1,7 +1,12 @@
 import React from 'react'
 import ProductSlider from '../../Components/ProductSlider/ProductSlider'
+import { GrNext } from "react-icons/gr";
+import { GrPrevious } from "react-icons/gr";
 
 const Whishlist = () => {
+  const savedWhishlist = localStorage.getItem("whishlistProducts");
+  const whishlist = JSON.parse(savedWhishlist)
+
   let Arrowsettings = {
     dots: false,
     arrows: true,
@@ -13,9 +18,36 @@ const Whishlist = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
   };
+
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <GrNext
+        className={className}
+        style={{ ...style, display: "block", color: "black" }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <GrPrevious
+        className={className}
+        style={{ ...style, display: "block", color: "black" }}
+        onClick={onClick}
+      />
+    );
+  }
+
+
   return (
-    <div>
-      <ProductSlider products={whishlistProduct} setup={Arrowsettings} />
+    <div className='w-full mx-auto max-w-[1800px]'>
+      <div>
+        <ProductSlider products={whishlist} setup={Arrowsettings} />
+      </div>
     </div>
   )
 }

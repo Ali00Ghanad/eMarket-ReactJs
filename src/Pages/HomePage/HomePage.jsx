@@ -13,7 +13,12 @@ import { CiMobile1 } from "react-icons/ci";
 import { PiDressLight } from "react-icons/pi";
 import { PiShirtFoldedThin } from "react-icons/pi";
 import { GiEmeraldNecklace } from "react-icons/gi";
-import speaker from './assets/Frame 600.png'
+
+// pics
+import playstation from './assets/ps5.png'
+import woman from './assets/attractive-woman-wearing-hat-posing-black-background 1.png'
+import speaker from './assets/Frame 707.png'
+import Perfume from './assets/Frame 706.png'
 
 const HomePage = () => {
   // ---- States ---- 
@@ -99,8 +104,8 @@ const HomePage = () => {
   };
 
   return (
-    <div className='w-full mx-auto max-w-[1800px]'>
-      <div className='px-[135px] flex flex-col'>
+    <div className='w-full'>
+      <div className='flex flex-col w-full max-w-[1440px] mx-auto'>
 
         <div dir='rtl' className='w-full mx-auto flex items-center'>
           <div className='pt-5 pl-5 border-l w-[80%] border-slate-200'>
@@ -209,7 +214,7 @@ const HomePage = () => {
         </div>
 
 
-        <div className='mt-[140px]'>
+        <div className='mt-[80px]'>
 
           <div className='mb-10'>
             <div className='flex items-center '>
@@ -261,7 +266,7 @@ const HomePage = () => {
         </div>
 
 
-        <div className='mt-[140px] border-b border-slate-200'>
+        <div className='mt-[140px]'>
 
           <div className='mb-10'>
             <div className='flex items-center '>
@@ -281,6 +286,55 @@ const HomePage = () => {
 
         </div>
 
+        <div className='mt-[140px] border-b border-slate-200'>
+
+          <div className='mb-10'>
+            <div className='flex items-center '>
+              <div className='w-[14px] h-[20px] rounded-sm bg-red-600'></div>
+              <h4 className='text-red-600 w-fit pl-2 font-semibold'>Featured</h4>
+            </div>
+            <p className='text-[24px] font-semibold'>New Arrival</p>
+          </div>
+
+          <div className='grid grid-cols-4 gap-[30px]'>
+
+            <div className='row-span-2 flex items-center justify-center bg-darkGray relative col-span-2 rounded-md'>
+              <img src={playstation} />
+              <div className='absolute left-5 bottom-5 text-white flex flex-col gap-y-5'>
+                <h4 className='text-[18px] font-semibold'>PlayStation 5</h4>
+                <p className='text-[12px] font-light'>Black and White version of the PS5 <br/> coming out on sale.</p>
+                <p className='underline cursor-pointer'>Shop Now</p>
+              </div>
+            </div>
+
+            <div className='col-span-2 flex items-center justify-end bg-darkGray relative rounded-md pr-2'>
+              <img src={woman} />
+              <div className='absolute left-5 bottom-5 text-white flex flex-col gap-y-5'>
+                <h4 className='text-[18px] font-semibold'>Women's Collection</h4>
+                <p className='text-[12px] font-light'>Featured woman collections that <br /> give you another vibe.</p>
+                <p className='underline cursor-pointer'>Shop Now</p>
+              </div>
+            </div>
+
+            <div className='py-10 flex items-center justify-center bg-darkGray relative rounded-md'>
+              <img src={speaker}/>
+              <div className='absolute left-5 bottom-5 text-white flex flex-col gap-y-5'>
+                <h4 className='text-[18px] font-semibold'>Speakers</h4>
+                <p className='text-[12px] font-light'>Amazon wireless speakers</p>
+                <p className='underline cursor-pointer'>Shop Now</p>
+              </div>
+            </div>
+
+            <div className='flex items-center justify-center bg-darkGray relative rounded-md'>
+              <img src={Perfume} />
+              <div className='absolute left-5 bottom-5 text-white flex flex-col gap-y-5'>
+                <h4 className='text-[18px] font-semibold'>Perfume</h4>
+                <p className='text-[12px] font-light'>GUCCI INTENSE OUD EDP</p>
+                <p className='underline cursor-pointer'>Shop Now</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -7,21 +7,30 @@ import { TiStarFullOutline } from "react-icons/ti";
 import { FaStarHalf } from "react-icons/fa6";
 
 const ProductSlider = ({ products, setup }) => {
-<<<<<<< HEAD
-=======
-    const whishlistProducts = [];
-    console.log('whishlistArray', whishlistProducts);
->>>>>>> f1d4e6bff5e882268c9c0d146a91997cb1ce3745
+    const [whishlistProducts, setWhishlistProducts] = useState(() => {
+        const savedWhishlist = localStorage.getItem("whishlistProducts");
+        return savedWhishlist ? JSON.parse(savedWhishlist) : [];
+    });
 
     const starRate = (rate) => {
         const stars = [];
         for (let i = 1; i <= rate; i++) {
             stars.push(<TiStarFullOutline />)
         }
-
         return <div style={{ color: "#FFAD33" }} className='flex'>{stars.map(item => (<div>{item}</div>))}{rate > Math.floor(rate) && <FaStarHalf />}</div>
     }
 
+    useEffect(() => {
+        localStorage.setItem("whishlistProducts", JSON.stringify(whishlistProducts));
+    }, [whishlistProducts]);
+
+    const handleAddToWhishlist = (item) => {
+        setWhishlistProducts(prevProducts => {
+            if (prevProducts.some(product => product.id === item.id)) return prevProducts;
+
+            return [...prevProducts, item];
+        });
+    };
 
     return (
         <div className='w-full'>
@@ -33,19 +42,10 @@ const ProductSlider = ({ products, setup }) => {
                                 <img className='h-full object-scale-down mx-auto' src={item.image} />
                                 <div className='absolute top-2 w-full px-2 flex items-center justify-between'>
                                     <p style={{ boxShadow: "2px 2px 4px 0px rgba(0, 0, 0, 0.363)", display: `${setup.rows ? "none" : "block"}` }} className='px-2 bg-red-600 rounded-md text-white w-fit'>- {item.category === "jewelery" ? "85%" : "50%"}</p>
-<<<<<<< HEAD
-                                    <div style={{ backgroundColor: "rgba(172, 188, 202, 0.252)" }} className={`w-[30px] h-[30px] rounded-full flex items-center justify-center
-                                     hover:!bg-red-500 hover:!text-white duration-[0.3s] ${setup.rows && "absolute right-2"}`}>
-=======
-                                    <div onClick={() => {
-                                        whishlistProducts.includes(item) ? null : whishlistProducts.push(item)
-                                        console.log(whishlistProducts);
-                                        localStorage.setItem("whishlistProducts", JSON.stringify(whishlistProducts))
-                                    }}
+                                    <div onClick={() => handleAddToWhishlist(item)}
                                         style={{ backgroundColor: "rgba(172, 188, 202, 0.252)" }}
                                         className='w-[30px] h-[30px] rounded-full flex items-center justify-center'
                                     >
->>>>>>> f1d4e6bff5e882268c9c0d146a91997cb1ce3745
                                         <IoIosHeartEmpty className='text-[20px]' />
                                     </div>
                                 </div>
@@ -68,4 +68,4 @@ const ProductSlider = ({ products, setup }) => {
     )
 }
 
-export default ProductSlider
+export default ProductSlider;
