@@ -4,14 +4,14 @@ import Header from '../../Components/Header/Header'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { GrLinkNext } from "react-icons/gr";
 import ProductSlider from '../../Components/ProductSlider/ProductSlider';
-import { GrNext } from "react-icons/gr";
-import { GrPrevious } from "react-icons/gr";
+import { notification } from 'antd';
 // ---- react icons ----
 import { CiMobile1 } from "react-icons/ci";
 import { PiDressLight } from "react-icons/pi";
-import { PiShirtFoldedThin } from "react-icons/pi";
+import { PiShirtFoldedThin } from "react-icons/pi"; import { GrLinkNext } from "react-icons/gr";
+import { GrNext } from "react-icons/gr";
+import { GrPrevious } from "react-icons/gr";
 import { GiEmeraldNecklace } from "react-icons/gi";
 
 // pics
@@ -19,6 +19,8 @@ import playstation from './assets/ps5.png'
 import woman from './assets/attractive-woman-wearing-hat-posing-black-background 1.png'
 import speaker from './assets/Frame 707.png'
 import Perfume from './assets/Frame 706.png'
+import Services from '../../Components/Services/Services';
+import bigSpeaker from './assets/Frame 600.png'
 
 const HomePage = () => {
   // ---- States ---- 
@@ -261,7 +263,7 @@ const HomePage = () => {
           </div>
 
           <div style={{ backgroundImage: "radial-gradient(closest-side at 50% 55%, red, darkgreen, black)" }}>
-            <img src={speaker} />
+            <img src={bigSpeaker} />
           </div>
         </div>
 
@@ -286,7 +288,7 @@ const HomePage = () => {
 
         </div>
 
-        <div className='mt-[140px] border-b border-slate-200'>
+        <div className='mt-[140px]'>
 
           <div className='mb-10'>
             <div className='flex items-center '>
@@ -302,7 +304,7 @@ const HomePage = () => {
               <img src={playstation} />
               <div className='absolute left-5 bottom-5 text-white flex flex-col gap-y-5'>
                 <h4 className='text-[18px] font-semibold'>PlayStation 5</h4>
-                <p className='text-[12px] font-light'>Black and White version of the PS5 <br/> coming out on sale.</p>
+                <p className='text-[12px] font-light'>Black and White version of the PS5 <br /> coming out on sale.</p>
                 <p className='underline cursor-pointer'>Shop Now</p>
               </div>
             </div>
@@ -317,7 +319,7 @@ const HomePage = () => {
             </div>
 
             <div className='py-10 flex items-center justify-center bg-darkGray relative rounded-md'>
-              <img src={speaker}/>
+              <img src={speaker} />
               <div className='absolute left-5 bottom-5 text-white flex flex-col gap-y-5'>
                 <h4 className='text-[18px] font-semibold'>Speakers</h4>
                 <p className='text-[12px] font-light'>Amazon wireless speakers</p>
@@ -335,6 +337,8 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+
+        <Services />
       </div>
     </div>
   )

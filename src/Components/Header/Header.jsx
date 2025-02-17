@@ -62,7 +62,7 @@ const Header = () => {
 
                 <div className='relative' onClick={()=>navigate("/whishlist")}>
                     <IoIosHeartEmpty className='text-[25px] cursor-pointer' />
-                    <div className={`absolute top-[0px] right-[-6px] flex justify-center items-center text-[12px] rounded-full bg-red-600 text-white w-[15px] h-[15px] z-50 `}>
+                    <div className={`absolute cursor-pointer top-[0px] right-[-6px] flex justify-center items-center text-[12px] rounded-full bg-red-600 text-white w-[15px] h-[15px] z-50 `}>
                         {whishlistCounter}
                     </div>
                 </div>

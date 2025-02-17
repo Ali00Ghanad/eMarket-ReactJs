@@ -44,7 +44,7 @@ const Whishlist = () => {
 
 
   return (
-    <div className='w-full mx-auto max-w-[1800px]'>
+    <div className='w-full mx-auto max-w-[1440px] '>
       <div>
         <ProductSlider products={whishlist} setup={Arrowsettings} />
       </div>

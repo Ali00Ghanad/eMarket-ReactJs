@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { TiStarFullOutline } from "react-icons/ti";
 import { FaStarHalf } from "react-icons/fa6";
+import { notification } from 'antd';
 
 const ProductSlider = ({ products, setup }) => {
     const [whishlistProducts, setWhishlistProducts] = useState(() => {
@@ -25,6 +26,19 @@ const ProductSlider = ({ products, setup }) => {
     }, [whishlistProducts]);
 
     const handleAddToWhishlist = (item) => {
+        notification.success({
+            message: "Your product added in whishlist succussfuly !",
+            placement: "top",
+            showProgress: "true",
+            duration: "20",
+            onClose: () => {
+                notification.info({
+                    message: "check your wishlist for more related products",
+                    placement: "bottomRight",
+
+                })
+            }
+        })
         setWhishlistProducts(prevProducts => {
             if (prevProducts.some(product => product.id === item.id)) return prevProducts;
 
@@ -40,11 +54,11 @@ const ProductSlider = ({ products, setup }) => {
                         <div className=' !h-[350px] !w-[250px] !m-h-[200px] m-w-[100px] my-[20px] cursor-pointer shadow-lg '>
                             <div id='productPic' className='w-[250px] h-[250px] relative'>
                                 <img className='h-full object-scale-down mx-auto' src={item.image} />
-                                <div className='absolute top-2 w-full px-2 flex items-center justify-between'>
+                                <div className={`absolute top-2 w-full px-2 flex items-center  ${setup.rows ? "justify-end" : "justify-between"}`}>
                                     <p style={{ boxShadow: "2px 2px 4px 0px rgba(0, 0, 0, 0.363)", display: `${setup.rows ? "none" : "block"}` }} className='px-2 bg-red-600 rounded-md text-white w-fit'>- {item.category === "jewelery" ? "85%" : "50%"}</p>
                                     <div onClick={() => handleAddToWhishlist(item)}
                                         style={{ backgroundColor: "rgba(172, 188, 202, 0.252)" }}
-                                        className='w-[30px] h-[30px] rounded-full flex items-center justify-center'
+                                        className={`w-[30px] h-[30px] rounded-full flex items-center justify-center hover:!bg-red-500 hover:text-white duration-[0.2s] `}
                                     >
                                         <IoIosHeartEmpty className='text-[20px]' />
                                     </div>
