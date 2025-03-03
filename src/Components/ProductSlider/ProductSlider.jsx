@@ -30,14 +30,7 @@ const ProductSlider = ({ products, setup }) => {
             message: "Your product added in whishlist succussfuly !",
             placement: "top",
             showProgress: "true",
-            duration: "20",
-            onClose: () => {
-                notification.info({
-                    message: "check your wishlist for more related products",
-                    placement: "bottomRight",
-
-                })
-            }
+            duration: "5",
         })
         setWhishlistProducts(prevProducts => {
             if (prevProducts.some(product => product.id === item.id)) return prevProducts;
