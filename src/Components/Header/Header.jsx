@@ -18,11 +18,9 @@ const Header = () => {
             setWhishlistCounter(getWhishlistCount());
         };
 
-        // گوش دادن به تغییرات در localStorage
         window.addEventListener('storage', handleStorageChange);
 
         return () => {
-            // تمیز کردن event listener هنگام unmount شدن کامپوننت
             window.removeEventListener('storage', handleStorageChange);
         };
     }, []);

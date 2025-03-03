@@ -106,8 +106,8 @@ const HomePage = () => {
   };
 
   return (
-    <div className='w-full'>
-      <div className='flex flex-col w-full max-w-[1440px] mx-auto'>
+    <div className='w-full max-w-[1440px] mx-auto'>
+      <div className='flex flex-col w-full mx-auto'>
 
         <div dir='rtl' className='w-full mx-auto flex items-center'>
           <div className='pt-5 pl-5 border-l w-[80%] border-slate-200'>
