@@ -4,6 +4,7 @@ import HomePage from './Pages/HomePage/HomePage'
 import Whishlist from './Pages/Whishlist/Whishlist'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/assets/Footer'
+import SpecificProduct from './Pages/SpecificProduct/SpecificProduct'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path='/' Component={HomePage} />
           <Route path='/home' Component={HomePage} />
           <Route path='/whishlist' Component={Whishlist} />
+          <Route path='home/:category/:id' Component={SpecificProduct} />
         </Routes>
         <Footer />
       </BrowserRouter>

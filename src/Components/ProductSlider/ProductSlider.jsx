@@ -6,8 +6,12 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { TiStarFullOutline } from "react-icons/ti";
 import { FaStarHalf } from "react-icons/fa6";
 import { notification } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const ProductSlider = ({ products, setup }) => {
+
+    const navigate = useNavigate(null)
+
     const [whishlistProducts, setWhishlistProducts] = useState(() => {
         const savedWhishlist = localStorage.getItem("whishlistProducts");
         return savedWhishlist ? JSON.parse(savedWhishlist) : [];
@@ -44,7 +48,7 @@ const ProductSlider = ({ products, setup }) => {
             <Slider {...setup}>
                 {
                     products.map((item, index) => (
-                        <div className=' !h-[350px] !w-[250px] !m-h-[200px] m-w-[100px] my-[20px] cursor-pointer shadow-lg '>
+                        <div className='!h-[350px] !w-[250px] !m-h-[200px] m-w-[100px] my-[20px] cursor-pointer shadow-lg' onClick={()=>navigate(`home/${item.category}/${item.id}`)}>
                             <div id='productPic' className='w-[250px] h-[250px] relative'>
                                 <img className='h-full object-scale-down mx-auto' src={item.image} />
                                 <div className={`absolute top-2 w-full px-2 flex items-center  ${setup.rows ? "justify-end" : "justify-between"}`}>
