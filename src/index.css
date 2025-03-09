@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-#border{
+.border{
     width: 0px;
     height: 2px;
     background-color: gray;
     margin: 0 auto;
     transition: 0.4s;
 }
-#navbarContent:hover #border{
+.navbarContent:hover .border{
     width:100%;
     transition: 0.4s;
 }
