@@ -41,7 +41,7 @@ const Header = () => {
                 </div>
 
                 <div id='navbarContent'>
-                    <Link to="/">About</Link>
+                    <Link to="home/about">About</Link>
                     <div id='border'></div>
                 </div>
 

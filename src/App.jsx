@@ -5,6 +5,7 @@ import Whishlist from './Pages/Whishlist/Whishlist'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/assets/Footer'
 import SpecificProduct from './Pages/SpecificProduct/SpecificProduct'
+import AboutUs from './Pages/AboutUs/AboutUs'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/home' Component={HomePage} />
           <Route path='/whishlist' Component={Whishlist} />
           <Route path='home/:category/:id' Component={SpecificProduct} />
+          <Route path='home/about' Component={AboutUs} />
         </Routes>
         <Footer />
       </BrowserRouter>

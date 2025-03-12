@@ -5,7 +5,7 @@ import moneyBack from './assets/moneyBackSrv.png'
 
 const Services = () => {
   return (
-    <div className={`flex items-center justify-evenly my-[140px]`}>
+    <div className={`flex items-center justify-evenly my-[140px] w-full`}>
 
       <div className='flex items-center flex-col text-center gap-y-4'>
         <img src={delivery} />
