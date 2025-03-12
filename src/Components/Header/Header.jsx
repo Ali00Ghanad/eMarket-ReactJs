@@ -23,9 +23,6 @@ const Header = () => {
                 <div className='navbarContent'>
                     <Link to="/">About</Link>
                     <div className='border'></div>
-                <div id='navbarContent'>
-                    <Link to="home/about">About</Link>
-                    <div id='border'></div>
                 </div>
 
                 <div className='navbarContent'>
