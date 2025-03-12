@@ -16,9 +16,9 @@ const Signup = () => {
 
                 <div className='mt-5'>
                     <div className='flex flex-col gap-y-6'>
-                        <input placeholder='Name' className='border-b-2 border-gray-300 placeholder:text-gray-400 outline-none py-2 focus:border-gray-500 focus:text-gray-600 focus:placeholder:text-gray-500 font-semibold' />
-                        <input placeholder='Email or Phone Number' className='border-b-2 border-gray-300 placeholder:text-gray-400 outline-none py-2 focus:border-gray-500 focus:text-gray-600 focus:placeholder:text-gray-500 font-semibold' />
-                        <input placeholder='Password' className='border-b-2 border-gray-300 placeholder:text-gray-400 outline-none py-2 focus:border-gray-500 focus:text-gray-600 focus:placeholder:text-gray-500 font-semibold' />
+                        <input placeholder='Name' className='border-b-2 border-gray-300 placeholder:text-gray-400 outline-none py-2 focus:border-gray-500 focus:text-gray-600 text-gray-600 focus:placeholder:text-gray-500 font-semibold' />
+                        <input placeholder='Email or Phone Number' className='border-b-2 border-gray-300 placeholder:text-gray-400 outline-none py-2 focus:border-gray-500 focus:text-gray-600 text-gray-600 focus:placeholder:text-gray-500 font-semibold' />
+                        <input placeholder='Password' className='border-b-2 border-gray-300 placeholder:text-gray-400 outline-none py-2 focus:border-gray-500 focus:text-gray-600 text-gray-600 focus:placeholder:text-gray-500 font-semibold' />
                     </div>
 
                     <div className='mt-8 '>

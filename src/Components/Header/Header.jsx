@@ -5,6 +5,7 @@ import { SlBasket } from "react-icons/sl";
 import { IoSearchOutline } from "react-icons/io5";
 
 const Header = () => {
+    const navigate = useNavigate()
     return (
         <div className='w-full flex items-center justify-between pt-[40px] pb-[16px] px-[135px] border-b border-slate-200'>
             <Link to="/" className='text-[24px] font-semibold cursor-pointer'>eMarket</Link>
