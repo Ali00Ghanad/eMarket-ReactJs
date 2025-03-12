@@ -1,15 +1,22 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { IoIosHeartEmpty } from "react-icons/io";
+import { TiStarFullOutline } from "react-icons/ti";
+import { FaStarHalf } from "react-icons/fa6";
+import { GrNext } from "react-icons/gr";
+import { GrPrevious } from "react-icons/gr";
+import ProductSlider from '../../Components/ProductSlider/ProductSlider';
 
 const SpecificProduct = () => {
   const chosenProduct = useParams()
   const [product, setProduct] = useState()
+  const [allProducts, setAllProducts] = useState([])
+  const location = useLocation()
   console.log(product);
 
 
-  const specificProduct = async () => {
+  const specificProductFetch = async () => {
     try {
       const fetchApi = await axios.get(`https://fakestoreapi.com/products/${chosenProduct.id}`)
 
@@ -21,28 +28,91 @@ const SpecificProduct = () => {
     }
   }
 
+  const allProductsFetch = async () => {
+    try {
+      const response = await axios.get(`https://fakestoreapi.com/products`)
+
+      if (response.status === 200) {
+        setAllProducts(response.data)
+        console.log(response.data);
+      }
+      else if (response.status === 404) {
+
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
-    specificProduct()
-  }, [])
+    allProductsFetch()
+    specificProductFetch()
+  }, [location])
+
+  const starRate = (rate) => {
+    const stars = [];
+    for (let i = 1; i <= rate; i++) {
+      stars.push(<TiStarFullOutline />)
+    }
+    return <div style={{ color: "#FFAD33" }} className='flex'>{stars.map(item => (<div>{item}</div>))}{rate > Math.floor(rate) && <FaStarHalf />}</div>
+  }
+
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <GrNext
+        className={className}
+        style={{ ...style, display: "block", color: "black" }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <GrPrevious
+        className={className}
+        style={{ ...style, display: "block", color: "black" }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  let Arrowsettings = {
+    dots: false,
+    arrows: true,
+    infinite: true,
+    focusOnSelect: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 2,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
+  };
+
+
 
   return (
     <div className='w-full max-w-[1440px] mx-auto'>
 
-      <div>
+      <div className='py-10'>
         {/* address  */}
-        <div className='flex'>
+        <div className='flex justify-between w-full items-center '>
           <div>
-            <img src={product.image} />
+            <img className='w-[60%] max-w-[600px]' src={product?.image} />
           </div>
-          <div>
-            <div className='border-b-2 border-gray-400'>
-              <h2>{product.title}</h2>
-              {/* rate */}
-              <p>${product.price}</p>
-              <p>${product.description}</p>
+          <div className='w-[40%]'>
+            <div className='border-b-2 border-gray-400 flex flex-col gap-y-4 pb-5'>
+              <h2 className='text-[20px] font-semibold'>{product?.title}</h2>
+              <div>{starRate(product?.rating?.rate)}</div>
+              <p className='text-[20px] '> $ {product?.price}</p>
+              <p>{product?.description}</p>
             </div>
 
-            <div>
+            <div className='pt-5 flex flex-col gap-y-4'>
 
               {/* color  */}
               <div className='flex items-center gap-x-3'>
@@ -103,6 +173,23 @@ const SpecificProduct = () => {
             </div>
           </div>
         </div>
+
+        <div className='mt-[140px]'>
+
+          <div className='mb-10'>
+            <div className='flex items-center '>
+              <div className='w-[14px] h-[20px] rounded-sm bg-red-600'></div>
+              <h4 className='text-red-600 w-fit pl-2 font-semibold'>Related Item</h4>
+            </div>
+          </div>
+
+          <div className='flex flex-col items-center'>
+            <ProductSlider setup={Arrowsettings} products={allProducts.filter(item => item?.category === product?.category && item.title !== product.title)} />
+            <button className='text-white px-[48px] py-[16px] bg-red-600 rounded-md my-[60px]'>View All Products</button>
+          </div>
+
+        </div>
+
       </div>
 
     </div>

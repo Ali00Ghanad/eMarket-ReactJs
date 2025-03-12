@@ -4,8 +4,6 @@ import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 
 const Whishlist = () => {
-  const savedWhishlist = localStorage.getItem("whishlistProducts");
-  const whishlist = JSON.parse(savedWhishlist)
 
   let Arrowsettings = {
     dots: false,

@@ -1,6 +1,6 @@
 ## سایت فروشگاهی eMarket
-پلتفرم eMarket یک پلتفرم فروشگاهی است که با استفاده از React.js ساخته شده است. این پروژه شامل امکاناتی مانند نمایش محصولات، مدیریت سبد خرید و فرآیند پرداخت آنلاین است. برای طراحی رابط کاربری، از یک UI/UX آماده که از منابع آنلاین به‌دست آمده استفاده شده است. هدف از این پروژه ارزیابی توانایی خود در نوشتن کد تمیز و پیاده‌سازی درست و کارآمد یک سایت فروشگاهی است.
+پلتفرم Emarket یک فروشگاه اینترنتی توسعه‌یافته با React است که از Tailwind CSS برای طراحی استفاده می‌کند. این پروژه شامل بخش‌هایی مانند نمایش محصولات، صفحه جزئیات محصول، سبد خرید و مدیریت سفارشات است. برای مدیریت وضعیت از Redux بهره گرفته شده و برخی از المان‌های رابط کاربری بر اساس یک طرح UI آماده پیاده‌سازی شده‌اند.
 
 <br/><br/>
 ## eMarket - E-commerce Platform
-eMarket is an e-commerce platform built with React.js. This project includes features such as product listings, shopping cart management, and an online checkout process. For the user interface design, a pre-made UI/UX template was used, sourced from online resources. The goal of this project is to assess my ability to write clean code and successfully implement an efficient e-commerce site.
+Emarket is an e-commerce platform built with React, utilizing Tailwind CSS for styling. It includes features such as product listing, product details page, shopping cart, and order management. Redux is used for state management, and some UI elements are adapted from a pre-existing design.
