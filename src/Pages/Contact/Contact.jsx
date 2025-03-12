@@ -26,7 +26,7 @@ const Contact = () => {
                         <div className='bg-gray-200 rounded-md px-4 py-2'><input className='bg-gray-200 w-full border-none outline-none text-black placeholder:text-gray-500' placeholder='Your name' /></div>
                         <div className='bg-gray-200 rounded-md px-4 py-2'><input className='bg-gray-200 w-full border-none outline-none text-black placeholder:text-gray-500' placeholder='Your name' /></div>
                         <div className='bg-gray-200 rounded-md px-4 py-2'><input className='bg-gray-200 w-full border-none outline-none text-black placeholder:text-gray-500' placeholder='Your name' /></div>
-                        <div className='bg-gray-200 rounded-md col-span-3 row-span-4 p-2'><input rows={10} className='bg-gray-200 border-none outline-none placeholder:text-gray-500 w-full' placeholder='Your Message...' /></div>
+                        <div className='bg-gray-200 rounded-md col-span-3 row-span-4 p-2'><textarea className='bg-gray-200 h-full resize-none border-none outline-none placeholder:text-gray-500 w-full' placeholder='Your Message...' ></textarea></div>
                         <button className='bg-red-500 text-white px-4 py-4 rounded-md col-start-3 '>Send Message</button>
                     </div>
                 </div>
