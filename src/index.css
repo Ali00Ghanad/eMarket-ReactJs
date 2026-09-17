@@ -2,33 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-.border{
+.borderAnimation {
     width: 0px;
     height: 2px;
-    background-color: gray;
+    border: 1px solid;
     margin: 0 auto;
+    border-color: transparent;
     transition: 0.4s;
 }
-.navbarContent:hover .border{
-    width:100%;
+
+.navbarContent:hover .borderAnimation {
+    width: 100%;
+    border-color: red;
     transition: 0.4s;
 }
-.slick-dots{
-    background-color: black;
-    padding-bottom: 5px !important;
-}
-.slick-dots li button::before{
-    color: rgb(255, 255, 255) !important;
-    font-size: 10px !important;
-}
-.slick-dots .slick-active button::before{
+
+.slick-dots .slick-active button::before {
     color: red !important;
     font-size: 10px !important;
     padding: 0 !important;
     border-radius: 100%;
 }
-#addToCart{background-color: black;color: white;height: 0px;transition: 0.4s; opacity: 0;}
-#productPic:hover #addToCart{
+
+#addToCart {
+    background-color: black;
+    color: white;
+    height: 0px;
+    transition: 0.4s;
+    opacity: 0;
+}
+
+#productPic:hover #addToCart {
     height: 40px;
     opacity: 0.8;
     transition: 0.4s;

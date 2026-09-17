@@ -9,27 +9,24 @@ import Contact from './Pages/Contact/Contact'
 import Signup from './Pages/SignUp/Signup'
 import Login from './Pages/Login/Login'
 import AboutUs from './Pages/AboutUs/AboutUs'
+import MainLayout from './MainLayout'
 
 const App = () => {
   return (
-   <div className='min-h-screen flex flex-col'>
-      <BrowserRouter>
-        <Header />
-        <main className='flex-grow'>
-          <Routes>
-            <Route path='/' Component={HomePage} />
-            <Route path='/home' Component={HomePage} />
-            <Route path='/contact' Component={Contact} />
-            <Route path='/signup' Component={Signup} />
-            <Route path='/login' Component={Login} />
-            <Route path='/whishlist' Component={Whishlist} />
-            <Route path='/home/:category/:id' Component={SpecificProduct} />
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path='/' Component={HomePage} />
+          <Route path='/home' Component={HomePage} />
+          <Route path='/contact' Component={Contact} />
+          <Route path='/signup' Component={Signup} />
+          <Route path='/login' Component={Login} />
+          <Route path='/whishlist' Component={Whishlist} />
+          <Route path='/home/:category/:id' Component={SpecificProduct} />
           <Route path='home/about' Component={AboutUs} />
-          </Routes>
-        </main>
-        <Footer />
-      </BrowserRouter>
-    </div>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

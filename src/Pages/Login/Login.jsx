@@ -1,7 +1,7 @@
 import React from 'react'
 import google from './assets/Icon-Google.svg'
 import sidepic from './assets/Side Image.png'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const Login = () => {
     return (
         <div className='flex items-center gap-x-[120px] pt-[80px] pb-[140px]'>
@@ -20,7 +20,10 @@ const Login = () => {
 
                     <div className='mt-8 flex items-center justify-between'>
                         <button className='text-white bg-red-500 py-3 w-[30%] rounded-md min-w-[140px]'>Log In</button>
-                        <p className='text-red-500 cursor-pointer'>Forget Password</p>
+                        <div>
+                            <p className='text-red-500 cursor-pointer'>Forget Password</p>
+                            <Link to='/signup' className='text-sky-600 underline cursor-pointer'>Create an Account</Link>
+                        </div>
                     </div>
                 </div>
             </div>
