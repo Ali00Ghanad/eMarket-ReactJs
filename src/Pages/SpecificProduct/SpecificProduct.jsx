@@ -13,8 +13,6 @@ const SpecificProduct = () => {
   const [product, setProduct] = useState()
   const [allProducts, setAllProducts] = useState([])
   const location = useLocation()
-  console.log(product);
-  console.log('chosen product',chosenProduct);
 
 
   const specificProductFetch = async () => {

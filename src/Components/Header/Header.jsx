@@ -12,8 +12,6 @@ const Header = () => {
     const [allProducts, setAllProducts] = useState([])
     const [searchValue, setSearchValue] = useState("")
     const [itemExist, setItemExist] = useState(false)
-    console.log('data in header : ', allProducts);
-    console.log('data in search : ', searchValue);
 
     const StarRate = (rate) => {
         const stars = [];

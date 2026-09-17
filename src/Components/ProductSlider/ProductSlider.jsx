@@ -11,8 +11,6 @@ import { Link } from 'react-router-dom';
 
 const ProductSlider = ({ products }) => {
 
-    console.log(products);
-
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
         return (
